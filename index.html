@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pradeep Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>PRADEEP STUDIO</h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#our-works">Our Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <h2>Let us capture your magic moments</h2>
+          <p>
+            Your creativity, our inspiration. Magic in your eyes, I can’t live
+            without
+          </p>
+          <button
+            class="cta-btn"
+            onclick="document.getElementById('contact').scrollIntoView()"
+          >
+            Contact
+          </button>
+          <div class="images">
+            <img src="images/image1.jpg" alt="Image 1" />
+            <img src="images/image2.jpg" alt="Image 2" />
+            <img src="images/image3.jpg" alt="Image 3" />
+          </div>
+        </div>
+      </section>
+      <section id="why-choose-us" class="why-choose-us">
+        <div class="container">
+          <h2>Why Choose Us</h2>
+          <div class="features">
+            <div class="feature">
+              <img src="images/icon1.png" alt="Professional editing" />
+              <h3>Professional editing</h3>
+              <p>Fast and easy way to capture, edit, and share your work</p>
+            </div>
+            <div class="feature">
+              <img src="images/icon2.png" alt="Long lens shoots" />
+              <h3>Long lens shoots</h3>
+              <p>Great lens for perspective, portrait, and your work</p>
+            </div>
+            <div class="feature">
+              <img src="images/icon3.png" alt="Extensive equipment" />
+              <h3>Extensive equipment</h3>
+              <p>Provide you the extensive list of all our equipment</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="our-works" class="our-works">
+        <div class="container">
+          <h2>Our Awesome Works</h2>
+          <div class="gallery">
+            <img src="images/work1.jpg" alt="Work 1" />
+            <img src="images/work2.jpg" alt="Work 2" />
+            <img src="images/work3.jpg" alt="Work 3" />
+            <img src="images/work4.jpg" alt="Work 4" />
+            <img src="images/work5.jpg" alt="Work 5" />
+            <img src="images/work6.jpg" alt="Work 6" />
+            <img src="images/work7.jpg" alt="Work 7" />
+            <img src="images/work8.jpg" alt="Work 8" />
+            <img src="images/work9.jpg" alt="Work 9" />
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <form id="contactForm" onsubmit="sendWhatsAppMessage(event)">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h2>PRADEEP STUDIO</h2>
+          <div class="contact-info">
+            <p>pradeep@gmail.com</p>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"
+            ><img src="images/instagram-icon.png" alt="Instagram"
+          /></a>
+          <a href="#"><img src="images/youtube-icon.png" alt="youtube" /></a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function sendWhatsAppMessage(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        const whatsappNumber = "7092193897"; // Replace with your WhatsApp number
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+        )}`;
+
+        window.open(whatsappURL, "_blank");
+      }
+    </script>
+  </body>
+</html>
